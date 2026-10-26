@@ -4,7 +4,7 @@ description: "Turn a vague feeling into concrete visual style. Use when the user
 license: MIT
 metadata:
   author: xixi048
-  version: "1.0.0"
+  version: "1.0.1"
   language: zh-CN
 ---
 
@@ -79,7 +79,7 @@ python scripts/fs_api.py analyze "潮湿的南方夏天午后，老旧风扇在�
 ### Step 3 · 零命中时的两级降级
 
 ```bash
-# ① 免费档：连近义词一起匹配（gloss 词袋里混有易混词，可能带进反义，看结果取舍）
+# ① 免费档：连近义词一起匹配
 python scripts/fs_api.py analyze "<文本>" --fuzzy
 
 # ② 付费档：确认用户同意后再加，会消耗 1 次额度
@@ -143,8 +143,8 @@ python scripts/fs_api.py images cyberpunk,synthwave   # 批量取图，最多 5 
   或直接对整句用 `analyze`。
 - **`network_unreachable`** —— 连不上服务端。词表缓存还在的话用 `--offline` 继续跑本地档。
 - **本地零命中** —— 先加 `--fuzzy`（免费），再考虑 `--allow-cloud`。
-- **结果里出现反义词** —— `--fuzzy` 开了近义词匹配，而 gloss 词袋里刻意混着易混词
-  （如「温暖」带「冷寂」）。去掉 `--fuzzy` 即只认本词。
+- **召回太少，想多命中一些** —— 加 `--fuzzy` 连近义词一起匹配。gloss 词袋**末尾两个是刻意放的
+  反义/易混词**（如「温暖」带「冷寂」），`--fuzzy` 会自动排除它们，所以不会把反义算成命中。
 - **中文乱码** —— Windows 控制台设 `PYTHONIOENCODING=utf-8`。
 
 ## Resources

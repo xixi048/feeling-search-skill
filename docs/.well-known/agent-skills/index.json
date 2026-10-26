@@ -7,7 +7,7 @@
     {
       "name": "feeling-search",
       "description": "Turn a vague feeling into concrete visual style — one colloquial sentence in, feeling words and visual styles out (762 words / 598 styles). Free on a local cached lexicon, with a paid cloud fallback only on explicit opt-in.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": "https://github.com/xixi048/feeling-search-skill",
       "path": "skills/feeling-search/SKILL.md",
       "install": {

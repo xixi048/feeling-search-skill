@@ -7,7 +7,7 @@
   },
   "metadata": {
     "description": "Turn a vague feeling into concrete visual style — maps one colloquial sentence to 762 feeling words and 598 visual styles, free on a local cached lexicon with a paid cloud fallback.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "homepage": "https://github.com/xixi048/feeling-search-skill",
     "repository": "https://github.com/xixi048/feeling-search-skill",
     "license": "MIT",
@@ -29,7 +29,7 @@
     {
       "name": "feeling-search",
       "description": "Map a mood, atmosphere or sensation in plain language to feeling words and visual styles (762 words / 598 styles). Runs free on a local cached lexicon; falls back to a paid cloud analyze only when nothing matches locally and the user allows it.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": {
         "name": "xixi048",
         "url": "https://github.com/xixi048"
