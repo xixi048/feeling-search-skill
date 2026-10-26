@@ -1,25 +1,27 @@
 # 商店上架物料包 · feeling-search
 
 > 用途：把 `feeling-search` 推到国内外技能商店时，手填字段都已写好，直接复制即可。
-> 更新日期：2026-10-27 · 对应版本：**v1.0.1**
+> 更新日期：2026-10-27 · 对应版本：**v1.0.2**（定位改为「商业级美术对照表 / 美术风格大全 / 美术风格 AI 提示词大全」）
 
 ---
 
-## 0. 本轮实际提交（有回执才算数）
+## 0. 本轮实际提交（2026-10-27 复查，有回执才算数）
 
 | 渠道 | 结果 | 回执 |
 |---|---|---|
-| GitHub（公开仓库） | ✅ 已推送 v1.0.0 + topics + description | `e4eb9d0` / tag `v1.0.0`，仓库 `xixi048/feeling-search-skill` |
-| **skillstore.io** | ✅ 处理中（机器人会开 PR + 安全审计） | submission `3a741d97-761c-4a08-89b3-f2619fc7ee34`，status `processing` |
-| **skillsmd.dev** | ✅ 已提交待审 | id `0b5155fe-952e-4fcd-9219-e9299b3bd5c6` |
-| **buildwithclaude** | ✅ PR 已开 | [PR #569](https://github.com/davepoon/buildwithclaude/pull/569) |
-| **VoltAgent/awesome-agent-skills** | ✅ PR 已开（Specialized Domains 组） | [PR #1276](https://github.com/VoltAgent/awesome-agent-skills/pull/1276) |
+| GitHub（公开仓库） | ✅ 已推送 + topics + description | 仓库 `xixi048/feeling-search-skill`，tag `v1.0.0` → `v1.0.2` |
+| **skillstore.io** | ✅ **已收录**（机器审核 `safe`，PR 已合并） | submission `3a741d97-761c-4a08-89b3-f2619fc7ee34` → status **`published`**；合并 PR [aiskillstore/marketplace#3948](https://github.com/aiskillstore/marketplace/pull/3948)（`/xixi048-feeling-search`，risk safe） |
+| **buildwithclaude** | 🟡 PR 开着，**无人驳回** | [PR #569](https://github.com/davepoon/buildwithclaude/pull/569) · state `OPEN` · mergeable · 0 comments |
+| **VoltAgent/awesome-agent-skills** | 🟡 PR 开着，**无人驳回** | [PR #1276](https://github.com/VoltAgent/awesome-agent-skills/pull/1276) · state `OPEN` · mergeable · 0 comments |
 | **自建发现端点** | ✅ HTTP 200 | `https://xixi048.github.io/feeling-search-skill/.well-known/agent-skills/index.json` |
-| **ClawHub (openclaw)** | ⏸ 卡在许可条款 | CLI 报 `MIT-0 license terms must be accepted`，需在 clawhub 网页账户接受一次 |
+| **skillsmd.dev** | ❌ **丢失**（提交 ID 已 NOT_FOUND） | id `0b5155fe-…` 复查返回 `HTTP 404 Submission not found`，需重新提交 |
+| **ClawHub (openclaw)** | ⏸ 卡在 MIT-0 勾选 | 见 §1.5：**不是账户设置，是发布表单上的一个勾选框**，CLI 无此参数 |
 | **skillbay.sh** | ⏸ 等联系邮箱 | 匿名 quick 提交需 `contactEmail`，审核后会邮件索要 before/after 证据 |
-| 自动索引型（skills.sh / SkillsMP / LobeHub / claude-plugins.dev） | 🟡 等爬虫 | 布局与 topics 已就位；SkillsMP 需 ≥2 stars |
-| Cow Skill Hub / 腾讯 SkillHub(skillhub.cn) / Cindy / 讯飞 Astron | ⏸ 需登录 | 入口见 §6；zip 已备：`dist/feeling-search-v1.0.1-skillroot.zip`（34 KB，SKILL.md 在包根） |
+| 自动索引型（SkillsMP / LobeHub / claude-plugins.dev） | 🟡 等爬虫 | 布局与 topics 已就位；SkillsMP 需 ≥2 stars |
+| Cow Skill Hub / 腾讯 SkillHub(skillhub.cn) / Cindy / 讯飞 Astron | ⏸ 需登录 | 入口见 §1.5；zip：`dist/feeling-search-v1.0.2-skillroot.zip`（14 KB，SKILL.md 在包根） |
 | MCP 目录群（Smithery / Glama / mcp.so / PulseMCP） | ⏸ 下一步 | 需先交付可跑的 MCP server，不在本轮"推送"范围 |
+
+**结论：截至 2026-10-27，除 skillsmd 掉单外，没有一条是「被驳回」。** 两个 PR 都还挂在待审队列里。
 
 ## 1. 关键 URL（别填错）
 
@@ -37,12 +39,30 @@
 
 | 渠道 | 入口 | 登录后动作 | 需要的物料 |
 |---|---|---|---|
-| **ClawHub (openclaw)** | `https://clawhub.ai` | 账户里接受一次 **MIT-0 发布条款**（CLI 无此开关），之后一条 `clawhub publish` 即可 | slug `feeling-search`，仓库 URL，commit SHA |
+| **ClawHub (openclaw)** | `https://clawhub.ai/skills/publish` | 表单里勾一个 **MIT-0 复选框**再提交（见下方说明） | slug `feeling-search`，仓库 URL，commit SHA |
 | **skillbay.sh** | `https://skillbay.sh` | 匿名提交走 quick 表单；有账号可直接登录挂 $5 标价 | `dist/*.zip` + 联系邮箱（审核后会邮件索要 before/after 证据） |
 | **腾讯 SkillHub** | `https://skillhub.cn` | 网页提交（旧域名 skillhub.tencent.com 已 301） | `dist/*.zip` 或 GitHub 导入 |
 | **讯飞 Astron SkillHub** | `https://skill.xfyun.cn/publish` | 讯飞账号登录发布 | `dist/*.zip`，中文区文案见 §3 |
 
 ⚠️ Cow Skill Hub 官方域名未核实（Web + GitHub/Google OAuth，匿名 POST 返回 401），找到入口后再补。
+
+### ClawHub 的 MIT-0 到底在说什么（2026-10-27 从站上前端确认）
+
+ClawHub 发布页原文两条：
+
+1. `All skills published on ClawHub are licensed under MIT-0. Free to use, modify, and redistribute. No attribution required.`
+   —— 上架的技能一律按 **MIT-0（MIT No Attribution）** 授权：可商用、可改、可再分发，**不要求署名**。
+2. `ClawHub does not support paid skills, per-skill pricing, or paywalled releases.`
+   —— **不支持付费技能、不支持单技能定价、不支持付费墙。**
+
+所以那个勾选框的含义是：*同意把这一版按 MIT-0 放出去*。它**不是账户里的设置项，也不是一次性协议**，
+而是**每发布一次就要勾一次**的表单字段 —— 这也是 CLI `clawhub publish` 永远报
+`MIT-0 license terms must be accepted` 的原因：命令行没有这个字段，只能走网页表单。
+
+⚠️ 两个后果要记住：
+- 本仓库是 MIT（要求保留版权与许可声明），ClawHub 上是 MIT-0（不要求署名）—— 比 MIT 更宽松，
+  等于默许他人去掉署名。能接受就勾。
+- ClawHub **不能标价 $5**。要收费只能靠 API 侧的 x402 / 支付宝，不靠商店定价。
 
 包根 zip 位于仓库 `dist/feeling-search-v1.0.1-skillroot.zip`，SKILL.md 已在包根（Cow / SkillHub 类上传型渠道要求）。
 

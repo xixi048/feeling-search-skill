@@ -1,5 +1,7 @@
 # feeling-search · Agent Skill
 
+**A commercial-grade art reference chart · the complete art-style encyclopedia · an AI prompt encyclopedia for visual styles.**
+
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8%2B-3776ab.svg)](https://www.python.org/)
 
@@ -7,6 +9,13 @@
 
 One colloquial sentence in, art-direction vocabulary out — **762 feeling words, 598 visual styles**,
 each style with a name, a one-line definition and the words that triggered it.
+
+This is not a toy style picker. It is a **working art-direction reference** you can put in front of a
+real production: 598 named styles with definitions, mapped from 762 feeling words, so a brief like
+"cold white light, empty convenience store, rain" lands on a concrete, defensible art direction instead
+of five adjectives. Use it as an **art-style lookup table**, an **art-style prompt dictionary**
+(Midjourney / Stable Diffusion / Flux), or a **style–word cross-reference** for concept art, game art
+bibles and brand systems.
 
 **中文说明见 [README.zh-CN.md](README.zh-CN.md).**
 

@@ -1,5 +1,7 @@
 # 感觉检索 · Agent Skill
 
+**商业级美术对照表 · 美术风格大全 · 美术风格 AI 提示词大全。**
+
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8%2B-3776ab.svg)](https://www.python.org/)
 
@@ -7,6 +9,12 @@
 
 一句口语进去，美术风格词出来 —— **762 个感受词 / 598 个视觉风格**，每条风格带名称、
 一句话定义，以及它命中了输入里的哪些词。
+
+这不是一个玩具级画风选择器，而是能直接放进商业项目的**美术定调工具**：
+598 条命名风格各带定义，由 762 个感受词反查而来。一句「雨天、冷白灯光、空便利店」
+不再只换来五个形容词，而是落到一个说得清、立得住的美术方向。可当**美术风格对照表**用、
+当**美术风格 AI 提示词词典**用（Midjourney / Stable Diffusion / Flux），
+也可以当**风格–词汇交叉索引**，接进概念设计、游戏美术设定集与品牌视觉规范。
 
 **English: [README.md](README.md).**
 

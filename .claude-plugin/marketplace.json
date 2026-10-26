@@ -6,8 +6,8 @@
     "url": "https://github.com/xixi048"
   },
   "metadata": {
-    "description": "Turn a vague feeling into concrete visual style — maps one colloquial sentence to 762 feeling words and 598 visual styles, free on a local cached lexicon with a paid cloud fallback.",
-    "version": "1.0.1",
+    "description": "Commercial-grade art reference chart, art-style encyclopedia and art-style AI prompt encyclopedia — maps one colloquial sentence to 762 feeling words and 598 visual styles (each with name, definition, matched words and reference images). Free on a local cached lexicon with a paid cloud fallback.",
+    "version": "1.0.2",
     "homepage": "https://github.com/xixi048/feeling-search-skill",
     "repository": "https://github.com/xixi048/feeling-search-skill",
     "license": "MIT",
@@ -17,6 +17,9 @@
       "codex",
       "art-direction",
       "visual-style",
+      "art-style-reference",
+      "art-style-encyclopedia",
+      "prompt-encyclopedia",
       "image-generation",
       "prompt-engineering",
       "concept-art",
@@ -28,8 +31,8 @@
   "plugins": [
     {
       "name": "feeling-search",
-      "description": "Map a mood, atmosphere or sensation in plain language to feeling words and visual styles (762 words / 598 styles). Runs free on a local cached lexicon; falls back to a paid cloud analyze only when nothing matches locally and the user allows it.",
-      "version": "1.0.1",
+      "description": "商业级美术对照表 / 美术风格大全 / 美术风格 AI 提示词大全：把一句口语化的感觉描述映射成 762 个感受词与 598 种视觉风格（每种带名称、定义、命中词与参考图），可直接用于商业美术定调与出图。Commercial-grade art reference chart and art-style prompt encyclopedia; runs free on a local cached lexicon, with a paid cloud fallback only on explicit opt-in.",
+      "version": "1.0.2",
       "author": {
         "name": "xixi048",
         "url": "https://github.com/xixi048"
@@ -39,6 +42,9 @@
       "keywords": [
         "art-direction",
         "visual-style",
+        "art-style-reference",
+        "art-style-encyclopedia",
+        "prompt-encyclopedia",
         "image-generation",
         "prompt-engineering",
         "concept-art",

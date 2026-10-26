@@ -1,13 +1,16 @@
 {
   "$schema": "https://agentskills.io/schema/well-known-index.json",
   "version": 1,
-  "publisher": { "name": "xixi048", "url": "https://github.com/xixi048" },
+  "publisher": {
+    "name": "xixi048",
+    "url": "https://github.com/xixi048"
+  },
   "updated": "2026-10-27",
   "skills": [
     {
       "name": "feeling-search",
-      "description": "Turn a vague feeling into concrete visual style — one colloquial sentence in, feeling words and visual styles out (762 words / 598 styles). Free on a local cached lexicon, with a paid cloud fallback only on explicit opt-in.",
-      "version": "1.0.1",
+      "description": "商业级美术对照表 · 美术风格大全 · 美术风格 AI 提示词大全 — one colloquial sentence in, 762 feeling words and 598 visual styles out (each with name, definition, matched words and reference images). Free on a local cached lexicon, with a paid cloud fallback only on explicit opt-in.",
+      "version": "1.0.2",
       "source": "https://github.com/xixi048/feeling-search-skill",
       "path": "skills/feeling-search/SKILL.md",
       "install": {
@@ -15,7 +18,18 @@
         "plugin_marketplace": "/plugin marketplace add xixi048/feeling-search-skill"
       },
       "license": "MIT",
-      "tags": ["art-direction", "visual-style", "image-generation", "prompt-engineering", "concept-art", "design", "offline-first"]
+      "tags": [
+        "art-direction",
+        "visual-style",
+        "art-style-reference",
+        "art-style-encyclopedia",
+        "prompt-encyclopedia",
+        "image-generation",
+        "prompt-engineering",
+        "concept-art",
+        "design",
+        "offline-first"
+      ]
     }
   ]
 }
