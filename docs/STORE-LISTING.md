@@ -14,7 +14,8 @@
 | **buildwithclaude** | 🟡 PR 开着，**无人驳回** | [PR #569](https://github.com/davepoon/buildwithclaude/pull/569) · state `OPEN` · mergeable · 0 comments |
 | **VoltAgent/awesome-agent-skills** | 🟡 PR 开着，**无人驳回** | [PR #1276](https://github.com/VoltAgent/awesome-agent-skills/pull/1276) · state `OPEN` · mergeable · 0 comments |
 | **自建发现端点** | ✅ HTTP 200 | `https://xixi048.github.io/feeling-search-skill/.well-known/agent-skills/index.json` |
-| **skillsmd.dev** | ❌ **丢失**（提交 ID 已 NOT_FOUND） | id `0b5155fe-…` 复查返回 `HTTP 404 Submission not found`，需重新提交 |
+| **skillsmd.dev** | ✅ 已重提（原单掉单） | 旧 id `0b5155fe-…` → `HTTP 404 Submission not found`；新 id **`5e42b97d-edaa-4dfd-b4de-6e0f5c8dbab7`**（v1.0.2 文案）。注：该站按仓库解析 GitHub，偶发瞬时 `repo not found` 404，重试即通 |
+| **skillstore.io 内容刷新** | ⏸ 待重提 | 它把文件**快照**进 `pending/xixi048/feeling-search/`，仓库后续改动不会同步；重提被 `HTTP 409 already submitted within the last hour` 挡，需冷却后再提一次才能更新到 v1.0.2 文案 |
 | **ClawHub (openclaw)** | ⏸ 卡在 MIT-0 勾选 | 见 §1.5：**不是账户设置，是发布表单上的一个勾选框**，CLI 无此参数 |
 | **skillbay.sh** | ⏸ 等联系邮箱 | 匿名 quick 提交需 `contactEmail`，审核后会邮件索要 before/after 证据 |
 | 自动索引型（SkillsMP / LobeHub / claude-plugins.dev） | 🟡 等爬虫 | 布局与 topics 已就位；SkillsMP 需 ≥2 stars |
