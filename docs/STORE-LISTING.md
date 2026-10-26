@@ -1,7 +1,7 @@
 # 商店上架物料包 · feeling-search
 
 > 用途：把 `feeling-search` 推到国内外技能商店时，手填字段都已写好，直接复制即可。
-> 更新日期：2026-10-27 · 对应版本：**v1.0.0**
+> 更新日期：2026-10-27 · 对应版本：**v1.0.1**
 
 ---
 
@@ -18,7 +18,7 @@
 | **ClawHub (openclaw)** | ⏸ 卡在许可条款 | CLI 报 `MIT-0 license terms must be accepted`，需在 clawhub 网页账户接受一次 |
 | **skillbay.sh** | ⏸ 等联系邮箱 | 匿名 quick 提交需 `contactEmail`，审核后会邮件索要 before/after 证据 |
 | 自动索引型（skills.sh / SkillsMP / LobeHub / claude-plugins.dev） | 🟡 等爬虫 | 布局与 topics 已就位；SkillsMP 需 ≥2 stars |
-| Cow Skill Hub / 腾讯 SkillHub(skillhub.cn) / Cindy / 讯飞 Astron | ⏸ 需登录 | zip 已备：`dist/feeling-search-v1.0.0-skillroot.zip`（34 KB，SKILL.md 在包根） |
+| Cow Skill Hub / 腾讯 SkillHub(skillhub.cn) / Cindy / 讯飞 Astron | ⏸ 需登录 | 入口见 §6；zip 已备：`dist/feeling-search-v1.0.1-skillroot.zip`（34 KB，SKILL.md 在包根） |
 | MCP 目录群（Smithery / Glama / mcp.so / PulseMCP） | ⏸ 下一步 | 需先交付可跑的 MCP server，不在本轮"推送"范围 |
 
 ## 1. 关键 URL（别填错）
@@ -32,6 +32,19 @@
 
 ⚠️ 本机 git remote 被 `insteadof` 改写成 ghfast 镜像，提交商店时必须换成原始地址。
 本仓库 push 走的是 `git@github.com:`（SSH over 443），不受影响。
+
+## 1.5 需本人登录的渠道 · 直达入口
+
+| 渠道 | 入口 | 登录后动作 | 需要的物料 |
+|---|---|---|---|
+| **ClawHub (openclaw)** | `https://clawhub.ai` | 账户里接受一次 **MIT-0 发布条款**（CLI 无此开关），之后一条 `clawhub publish` 即可 | slug `feeling-search`，仓库 URL，commit SHA |
+| **skillbay.sh** | `https://skillbay.sh` | 匿名提交走 quick 表单；有账号可直接登录挂 $5 标价 | `dist/*.zip` + 联系邮箱（审核后会邮件索要 before/after 证据） |
+| **腾讯 SkillHub** | `https://skillhub.cn` | 网页提交（旧域名 skillhub.tencent.com 已 301） | `dist/*.zip` 或 GitHub 导入 |
+| **讯飞 Astron SkillHub** | `https://skill.xfyun.cn/publish` | 讯飞账号登录发布 | `dist/*.zip`，中文区文案见 §3 |
+
+⚠️ Cow Skill Hub 官方域名未核实（Web + GitHub/Google OAuth，匿名 POST 返回 401），找到入口后再补。
+
+包根 zip 位于仓库 `dist/feeling-search-v1.0.1-skillroot.zip`，SKILL.md 已在包根（Cow / SkillHub 类上传型渠道要求）。
 
 ## 2. 定价：免费引流 + 付费渠道标价
 
@@ -78,7 +91,7 @@
 
 ## 5. 下一步（按性价比排序）
 
-1. **接受 ClawHub 的 MIT-0 条款** → 一条 `clawhub publish` 就能发出去（CLI 已登录 xixi048）
+1. **在 `https://clawhub.ai` 接受 MIT-0 条款** → 一条 `clawhub publish` 就能发出去（CLI 已登录 xixi048）
 2. **补一个联系邮箱** → 提交 skillbay（付费渠道，标价 $5）
 3. 等 skillstore 机器人开 PR（5–10 分钟），PR 上通常会有安全审计结论，按需回复
 4. 登录型渠道：Cow Skill Hub / 腾讯 SkillHub / 讯飞 Astron 用 `dist/*.zip` 走 GitHub 导入
