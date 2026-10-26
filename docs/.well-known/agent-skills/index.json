@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agentskills.io/schema/well-known-index.json",
+  "version": 1,
+  "publisher": { "name": "xixi048", "url": "https://github.com/xixi048" },
+  "updated": "2026-10-27",
+  "skills": [
+    {
+      "name": "feeling-search",
+      "description": "Turn a vague feeling into concrete visual style — one colloquial sentence in, feeling words and visual styles out (762 words / 598 styles). Free on a local cached lexicon, with a paid cloud fallback only on explicit opt-in.",
+      "version": "1.0.0",
+      "source": "https://github.com/xixi048/feeling-search-skill",
+      "path": "skills/feeling-search/SKILL.md",
+      "install": {
+        "skills_cli": "npx skills add xixi048/feeling-search-skill",
+        "plugin_marketplace": "/plugin marketplace add xixi048/feeling-search-skill"
+      },
+      "license": "MIT",
+      "tags": ["art-direction", "visual-style", "image-generation", "prompt-engineering", "concept-art", "design", "offline-first"]
+    }
+  ]
+}
