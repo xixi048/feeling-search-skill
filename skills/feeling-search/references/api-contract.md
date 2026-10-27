@@ -124,8 +124,10 @@ v1 已于 2026-10-27 整体移除（感受层撤除），`/v1/*` 现在走平台
 拿到额度 token 的方式（三条，选一条）：
 
 1. **支付宝付款后领取**（推荐，独立端点、不重跑分析）
-   `POST /v2/quota/claim`，body: `{out_trade_no?, payment_proof, trade_no}`，
-   或带 `Payment-Proof` 头。返回 `{quota:{token,total,left,reset}, order:{…}}`。
+   `POST /v2/quota/claim`，两种给法：
+   - **只给 `out_trade_no`**（推荐）：服务端主动向支付宝查单，已付即发额度，未付返 `402 not_paid`
+   - **`payment_proof` + `trade_no`**（或 `Payment-Proof` 头）：宿主 SDK 回传凭证的场景
+   返回 `{quota:{token,total,left,reset}, order:{…, verified_by}}`。
    **幂等**：同一订单重复领取返回同一个 token。
 2. **带 `Payment-Proof` 重放** `/v2/analyze` → 响应头 `X-FS-Quota` 即 token（顺带返回分析结果）。
 3. **x402（USDC）**：按 `PAYMENT-REQUIRED` 头签名付款，结算后响应头直接给 `X-FS-Quota`。
