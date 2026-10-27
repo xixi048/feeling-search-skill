@@ -15,7 +15,11 @@
 | **VoltAgent/awesome-agent-skills** | 🟡 PR 开着，**无人驳回** | [PR #1276](https://github.com/VoltAgent/awesome-agent-skills/pull/1276) · state `OPEN` · mergeable · 0 comments |
 | **自建发现端点** | ✅ HTTP 200 | `https://xixi048.github.io/feeling-search-skill/.well-known/agent-skills/index.json` |
 | **skillsmd.dev** | ✅ 已重提（原单掉单） | 旧 id `0b5155fe-…` → `HTTP 404 Submission not found`；新 id **`5e42b97d-edaa-4dfd-b4de-6e0f5c8dbab7`**（v1.0.2 文案）。注：该站按仓库解析 GitHub，偶发瞬时 `repo not found` 404，重试即通 |
-| **skillstore.io 内容刷新** | ⏸ 待重提 | 它把文件**快照**进 `pending/xixi048/feeling-search/`，仓库后续改动不会同步；重提被 `HTTP 409 already submitted within the last hour` 挡，需冷却后再提一次才能更新到 v1.0.2 文案 |
+| **skillstore.io 内容刷新** | ✅ 已重提（2026-10-27） | 新 submission `0dd1668f-e82c-4144-a18f-f2d0c92f4d2b` → `pending`，ETA 5–10 分钟（此前被 1 小时冷却 409 挡，冷却后重提成功） |
+| **skillsmd.dev 再次提交** | ✅ 已提交（2026-10-27） | 新 id `eea63cc9-e656-4900-aa95-9c8c21102360`（v1.0.2 文案） |
+| **skillbay.sh** | ✅ 已提交（2026-10-27） | `HTTP 201` 已提交待人工审核。**付费版（$5）需邀请 + Stripe**，匿名单只能占曝光位 |
+| **WorkBuddy 开放平台** | ⏸ 待认证 | 包已就绪 `dist/wb/feeling-search-wb-1.0.2.zip`（8 必填字段已注入）；等开发者认证 + 微信签约。**内测抽 1%，国内最优**，详见 [PAID-LISTING.md](PAID-LISTING.md) |
+| **扣子 Coze（按次付费）** | ⏸ 待商户入驻 | 需 `code.coze.cn/merchant-management` 签协议开收款；可切分「本地免费 / 云端 ¥0.5 一次」 |
 | **ClawHub (openclaw)** | ⏸ 卡在 MIT-0 勾选 | 见 §1.5：**不是账户设置，是发布表单上的一个勾选框**，CLI 无此参数 |
 | **skillbay.sh** | ⏸ 等联系邮箱 | 匿名 quick 提交需 `contactEmail`，审核后会邮件索要 before/after 证据 |
 | 自动索引型（SkillsMP / LobeHub / claude-plugins.dev） | 🟡 等爬虫 | 布局与 topics 已就位；SkillsMP 需 ≥2 stars |
