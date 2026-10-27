@@ -15,7 +15,8 @@
 | `/v2/analyze` | POST | **1 次额度** | 一句描述 → 感受词 + 视觉风格 |
 | `/v2/styles/{id}` | GET | **1 次额度** | 风格详情，含图片与出处 |
 | `/v2/images?ids=a,b` | GET/POST | **1 次额度** | 批量取图，一次最多 5 个 |
-| `/v1/*` | — | — | 已下线，统一 410（感受层撤除） |
+
+v1 已于 2026-10-27 整体移除（感受层撤除），`/v1/*` 现在走平台默认 404，没有后继版本链接。
 
 限流：免费端点按 IP 滑动窗口，60 秒 20 次；超出回 429。
 
@@ -108,8 +109,11 @@
 
 | 轨道 | 币种 | 适用 |
 |---|---|---|
-| x402 | USDC，约 $0.10/次 | 海外 / 链上 Agent |
-| 支付宝 AI 付 | 人民币 | 国内 Agent |
+| x402 | USDC，$0.10/次（另有 $2.00/20 次包） | 海外 / 链上 Agent |
+| 支付宝 AI 付 | 人民币，**一次支付 0.10 元得 10 次额度**（合 0.01 元/次，90 天有效） | 国内 Agent |
+
+两条轨道的价格不是一回事：x402 是单次 $0.10，支付宝档位是 0.10 元买 10 次。
+对外写价格时别混着说。
 
 调用方式：
 
@@ -127,8 +131,7 @@
 | 400 | `empty_text` / `text_too_long` / `invalid_param` / `bad_json` / `missing_query` / `missing_id` / `missing_ids` / `invalid_id` | 请求参数问题 |
 | 402 | `payment_required` | 需要支付（原因见 `reason`：`no_credentials` / `exhausted` / `expired` / `invalid_proof` …） |
 | 404 | `word_not_found` / `style_not_found` / `not_found` | 查无此项 |
-| 405 | `method_not_allowed` | 方法不支持 |
-| 410 | `gone` | v1 已下线 |
+| 405 | `method_not_allowed` | 方法不支持（常见于用 GET 去戳 POST-only 的 `/v2/analyze`） |
 | 413 | `payload_too_large` / `too_many_ids` | 体积超限 |
 | 429 | — | 触发限流 |
 | 500 | `internal_error` | 服务端异常 |

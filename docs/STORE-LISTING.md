@@ -73,7 +73,7 @@ ClawHub 发布页原文两条：
   等于默许他人去掉署名。能接受就勾。
 - ClawHub **不能标价 $5**。要收费只能靠 API 侧的 x402 / 支付宝，不靠商店定价。
 
-包根 zip 位于仓库 `dist/feeling-search-v1.0.1-skillroot.zip`，SKILL.md 已在包根（Cow / SkillHub 类上传型渠道要求）。
+包根 zip 位于仓库 `dist/feeling-search-v1.0.2-skillroot.zip`，SKILL.md 已在包根（Cow / SkillHub 类上传型渠道要求）。
 
 ## 2. 定价：免费引流 + 付费渠道标价
 
@@ -84,7 +84,8 @@ ClawHub 发布页原文两条：
 | 扣子 Coze 技能商店 | ¥0.5/次 起 或 ¥9.9/月 | 约 70% 分成；需入驻商户，属"移植"不是"推送" |
 | GPT Store / Windows Agent Store | $4.99 | 需相应开发者账号，属移植 |
 
-技能本身在 API 侧另有计费（云端 analyze $0.10/次，x402 或支付宝两条轨道）——
+技能本身在 API 侧另有计费（云端 analyze 每次 1 额度：x402 是 $0.10/次，
+支付宝是 0.10 元买 10 次）——
 **商店标价与 API 计费是两回事**：商店卖的是"技能包 + 本地词典档"，本地档永远免费。
 
 ## 3. 各渠道展示文案
