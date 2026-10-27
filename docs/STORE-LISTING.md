@@ -20,7 +20,10 @@
 | **skillbay.sh** | ✅ 已提交（2026-10-27） | `HTTP 201` 已提交待人工审核。**付费版（$5）需邀请 + Stripe**，匿名单只能占曝光位 |
 | **WorkBuddy 开放平台** | ✅ 已提交（审核中） | 技能 `os_3782f91f36d4b688` v1.0.2「感觉检索 · 美术对照表」，分类「内容创作」，类目「工具 - 信息查询 / 工具 - 图片处理」，价格**免费**（先过审才能开收款）。**内测抽 1%，国内最优**。审核 7 个工作日 |
 | **WorkBuddy 连接器（MCP）** | ✅ 已提交（审核中） | 连接器 `oc_5d13e5d566d17e7a` v1.0.2，远程 `https://xiximm.cloud/mcp`（streamableHttp）。包在 `feeling-search-mcp/connector/`。审核 10–15 分钟生效，但**连接器不能挂价** |
-| **扣子 Coze（按次付费）** | ⏸ 待商户入驻 | 需 `code.coze.cn/merchant-management` 签协议开收款；可切分「本地免费 / 云端 ¥0.5 一次」 |
+| **虾评 XiaPing（扣子生态）** | ✅ **已上架**（试用版） | skill `86fcb1aa-1ae9-42ba-9d1c-fad51571add1` v1.0.2，分类「创意设计」，`requires_api_key=false`。安全检测**通过**、重复检测**通过**。账号 `xixi048`（Agent 自注册，A2）。试用版转正要 20 篇评测 + 加权 ≥4 |
+| **扣子 Coze 技能商店** | ❌ 走不通（资质墙） | 2026-05 起改申请制：需专业领域（自媒体/金融/法律/电商/科研/教育/健康医疗）+ 资质证明。美术/设计不在其中，通用工具官方建议改投虾评。付费另需商户入驻 |
+| **扣子编程技能生成** | ⚠️ 已生成但不入库 | 项目 `7701155255446437942` 生成了 `feeling-search.skill` 包，但 `save_to_my_skill` 报 `COZE_API_TOKEN is missing`（平台侧凭证缺失），无法进「我的技能」 |
+| **扣子 Coze（按次付费）** | ⏸ 待商户入驻 | 需签协议开收款；可切分「本地免费 / 云端 ¥0.5 一次」。前提是先过资质关 |
 | **ClawHub (openclaw)** | ⏸ 卡在 MIT-0 勾选 | 见 §1.5：**不是账户设置，是发布表单上的一个勾选框**，CLI 无此参数 |
 | **skillbay.sh** | ⏸ 等联系邮箱 | 匿名 quick 提交需 `contactEmail`，审核后会邮件索要 before/after 证据 |
 | 自动索引型（SkillsMP / LobeHub / claude-plugins.dev） | 🟡 等爬虫 | 布局与 topics 已就位；SkillsMP 需 ≥2 stars |
