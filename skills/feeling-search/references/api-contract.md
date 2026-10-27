@@ -121,8 +121,25 @@ v1 已于 2026-10-27 整体移除（感受层撤除），`/v1/*` 现在走平台
 - 无额度：服务端回 **402**，响应体里带两条轨道的支付要求（x402 的 `accepts` 数组 / 支付宝订单信息）
 - `X-FS-Rail: x402|alipay` 可强制只走一条
 
-拿到额度 token 的方式：买额度包 → 带 `payment-proof` 调一次 `/v2/analyze` →
-响应头 `X-FS-Quota` 即为 token。
+拿到额度 token 的方式（三条，选一条）：
+
+1. **支付宝付款后领取**（推荐，独立端点、不重跑分析）
+   `POST /v2/quota/claim`，body: `{out_trade_no?, payment_proof, trade_no}`，
+   或带 `Payment-Proof` 头。返回 `{quota:{token,total,left,reset}, order:{…}}`。
+   **幂等**：同一订单重复领取返回同一个 token。
+2. **带 `Payment-Proof` 重放** `/v2/analyze` → 响应头 `X-FS-Quota` 即 token（顺带返回分析结果）。
+3. **x402（USDC）**：按 `PAYMENT-REQUIRED` 头签名付款，结算后响应头直接给 `X-FS-Quota`。
+
+配套两个只读端点：
+
+| 端点 | 作用 | 计费 |
+|---|---|---|
+| `GET /v2/quota`（`X-FS-Quota` 头或 `?token=`） | 查余额：`total/used/left/reset/expired/usable`，只读不扣次 | 免费 |
+| `GET /v2/orders?out_trade_no=` | 查订单状态与是否已发额度，**不返回 token** | 免费 |
+
+402 回执里的机器可读字段：`rails`、`agent_rails`（**只有 x402 能自动付**）、
+`accepts`（x402 的链/金额/资产/收款地址）、`alipay.requires_human`、
+`alipay.pay_url`、`alipay.claim`、`alipay.status_url`、`alipay.topup_url`。
 
 ## 错误码
 
@@ -130,7 +147,9 @@ v1 已于 2026-10-27 整体移除（感受层撤除），`/v1/*` 现在走平台
 |---|---|---|
 | 400 | `empty_text` / `text_too_long` / `invalid_param` / `bad_json` / `missing_query` / `missing_id` / `missing_ids` / `invalid_id` | 请求参数问题 |
 | 402 | `payment_required` | 需要支付（原因见 `reason`：`no_credentials` / `exhausted` / `expired` / `invalid_proof` …） |
-| 404 | `word_not_found` / `style_not_found` / `not_found` | 查无此项 |
+| 404 | `word_not_found` / `style_not_found` / `not_found` / `unknown_order` / `unknown_token` | 查无此项 |
+| 400 | `missing_token` / `missing_out_trade_no` / `invalid_proof` | 额度/订单参数缺失 |
+| 409 | `amount_mismatch` / `resource_mismatch` / `order_check_failed` | 领取额度时的订单校验不通过 |
 | 405 | `method_not_allowed` | 方法不支持（常见于用 GET 去戳 POST-only 的 `/v2/analyze`） |
 | 413 | `payload_too_large` / `too_many_ids` | 体积超限 |
 | 429 | — | 触发限流 |
