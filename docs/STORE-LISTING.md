@@ -75,6 +75,10 @@ ClawHub 发布页原文两条：
 
 包根 zip 位于仓库 `dist/feeling-search-v1.0.2-skillroot.zip`，SKILL.md 已在包根（Cow / SkillHub 类上传型渠道要求）。
 
+> 重新打包：`python scripts/build_package.py`（通用规范包，产 skillroot zip + sha256 + manifest）；
+> WorkBuddy 专用包是 `python scripts/build_wb.py`（注入 8 个必填字段，产 `dist/wb/`）。
+> 2026-10-28 因支付宝档位改价（0.10 元 = 1 次）重建过一次，sha256 见 `dist/package-manifest-v1.0.2.json`。
+
 ## 2. 定价：免费引流 + 付费渠道标价
 
 | 渠道 | 定价 | 说明 |
@@ -85,7 +89,7 @@ ClawHub 发布页原文两条：
 | GPT Store / Windows Agent Store | $4.99 | 需相应开发者账号，属移植 |
 
 技能本身在 API 侧另有计费（云端 analyze 每次 1 额度：x402 是 $0.10/次，
-支付宝是 0.10 元买 10 次）——
+支付宝是 0.10 元/次）——
 **商店标价与 API 计费是两回事**：商店卖的是"技能包 + 本地词典档"，本地档永远免费。
 
 ## 3. 各渠道展示文案
