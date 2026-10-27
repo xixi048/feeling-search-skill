@@ -7,11 +7,12 @@
 
 > Turn a vague feeling into concrete visual style.
 
-One colloquial sentence in, art-direction vocabulary out — **762 feeling words, 598 visual styles**,
-each style with a name, a one-line definition and the words that triggered it.
+One colloquial sentence in, the visual style that fits best out — an **art reference chart** and
+prompt encyclopedia behind every match, each style carrying its name, a one-line definition and
+the words that triggered it.
 
 This is not a toy style picker. It is a **working art-direction reference** you can put in front of a
-real production: 598 named styles with definitions, mapped from 762 feeling words, so a brief like
+real production: every style named and defined, mapped back from feeling words, so a brief like
 "cold white light, empty convenience store, rain" lands on a concrete, defensible art direction instead
 of five adjectives. Use it as an **art-style lookup table**, an **art-style prompt dictionary**
 (Midjourney / Stable Diffusion / Flux), or a **style–word cross-reference** for concept art, game art

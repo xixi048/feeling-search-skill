@@ -6,7 +6,7 @@
     "url": "https://github.com/xixi048"
   },
   "metadata": {
-    "description": "Commercial-grade art reference chart, art-style encyclopedia and art-style AI prompt encyclopedia — maps one colloquial sentence to 762 feeling words and 598 visual styles (each with name, definition, matched words and reference images). Free on a local cached lexicon with a paid cloud fallback.",
+    "description": "Commercial-grade art reference chart, art-style encyclopedia and art-style AI prompt encyclopedia — maps one colloquial sentence to the visual style that fits best, backed by an art reference chart (each style with name, definition, matched words and reference images). Free on a local cached lexicon with a paid cloud fallback.",
     "version": "1.0.2",
     "homepage": "https://github.com/xixi048/feeling-search-skill",
     "repository": "https://github.com/xixi048/feeling-search-skill",
@@ -31,7 +31,7 @@
   "plugins": [
     {
       "name": "feeling-search",
-      "description": "商业级美术对照表 / 美术风格大全 / 美术风格 AI 提示词大全：把一句口语化的感觉描述映射成 762 个感受词与 598 种视觉风格（每种带名称、定义、命中词与参考图），可直接用于商业美术定调与出图。Commercial-grade art reference chart and art-style prompt encyclopedia; runs free on a local cached lexicon, with a paid cloud fallback only on explicit opt-in.",
+      "description": "商业级美术对照表 / 美术风格大全 / 美术风格 AI 提示词大全：把一句口语化的感觉描述检索成最匹配的视觉风格，并给出触发它的感受词（每种风格带名称、定义、命中词与参考图），可直接用于商业美术定调与出图。Commercial-grade art reference chart and art-style prompt encyclopedia; runs free on a local cached lexicon, with a paid cloud fallback only on explicit opt-in.",
       "version": "1.0.2",
       "author": {
         "name": "xixi048",

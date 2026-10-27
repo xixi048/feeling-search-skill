@@ -85,7 +85,7 @@ ClawHub 发布页原文两条：
 
 - **Name:** feeling-search
 - **Tagline:** Turn a vague feeling into concrete visual style
-- **Short:** One colloquial sentence in, art-direction vocabulary out — 762 feeling words, 598 visual styles.
+- **Short:** One colloquial sentence in, the best-matching visual style out — an art reference chart at your back.
 - **Long:** "I want it to feel like…" is where art direction starts and where vocabulary runs out.
   feeling-search is the lookup table between a mood and the name of a style. Describe a mood in plain
   Chinese or English and get back the feeling words it hits plus the visual styles those words map to,
@@ -96,7 +96,7 @@ ClawHub 发布页原文两条：
 ### 中文区（腾讯 SkillHub / Cow Skill Hub / 讯飞 Astron / 扣子）
 
 - **显示名：** 感觉检索
-- **简介：** 用你的感觉检索美术风格 —— 一句口语进去，762 个感受词、598 个视觉风格出来
+- **简介：** 用你的感觉检索美术风格 —— 一句口语进去，最匹配的视觉风格出来
 - **分类：** 设计 / 美术 / 创意工具
 - **标签：** 美术风格、氛围、情绪、图像生成、概念设计、游戏美术
 
