@@ -18,7 +18,8 @@
 | **skillstore.io 内容刷新** | ✅ 已重提（2026-10-27） | 新 submission `0dd1668f-e82c-4144-a18f-f2d0c92f4d2b` → `pending`，ETA 5–10 分钟（此前被 1 小时冷却 409 挡，冷却后重提成功） |
 | **skillsmd.dev 再次提交** | ✅ 已提交（2026-10-27） | 新 id `eea63cc9-e656-4900-aa95-9c8c21102360`（v1.0.2 文案） |
 | **skillbay.sh** | ✅ 已提交（2026-10-27） | `HTTP 201` 已提交待人工审核。**付费版（$5）需邀请 + Stripe**，匿名单只能占曝光位 |
-| **WorkBuddy 开放平台** | ⏸ 待认证 | 包已就绪 `dist/wb/feeling-search-wb-1.0.2.zip`（8 必填字段已注入）；等开发者认证 + 微信签约。**内测抽 1%，国内最优**，详见 [PAID-LISTING.md](PAID-LISTING.md) |
+| **WorkBuddy 开放平台** | ✅ 已提交（审核中） | 技能 `os_3782f91f36d4b688` v1.0.2「感觉检索 · 美术对照表」，分类「内容创作」，类目「工具 - 信息查询 / 工具 - 图片处理」，价格**免费**（先过审才能开收款）。**内测抽 1%，国内最优**。审核 7 个工作日 |
+| **WorkBuddy 连接器（MCP）** | ✅ 已提交（审核中） | 连接器 `oc_5d13e5d566d17e7a` v1.0.2，远程 `https://xiximm.cloud/mcp`（streamableHttp）。包在 `feeling-search-mcp/connector/`。审核 10–15 分钟生效，但**连接器不能挂价** |
 | **扣子 Coze（按次付费）** | ⏸ 待商户入驻 | 需 `code.coze.cn/merchant-management` 签协议开收款；可切分「本地免费 / 云端 ¥0.5 一次」 |
 | **ClawHub (openclaw)** | ⏸ 卡在 MIT-0 勾选 | 见 §1.5：**不是账户设置，是发布表单上的一个勾选框**，CLI 无此参数 |
 | **skillbay.sh** | ⏸ 等联系邮箱 | 匿名 quick 提交需 `contactEmail`，审核后会邮件索要 before/after 证据 |

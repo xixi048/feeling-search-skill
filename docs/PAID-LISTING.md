@@ -199,5 +199,6 @@ open.workbuddy.cn → 注册/登录 → 开发者认证（个人：手机+邮箱
 | skillstore.io | 2026-10-27 | `0dd1668f-e82c-4144-a18f-f2d0c92f4d2b` | pending，ETA 5–10 分钟 |
 | skillsmd.dev | 2026-10-27 | `eea63cc9-e656-4900-aa95-9c8c21102360` | Submission received |
 | skillbay.sh | 2026-10-27 | HTTP 201 | 已提交待人工审核（付费版需邀请） |
-| WorkBuddy 开放平台 | — | — | ⏸ 包已就绪，等开发者认证 |
+| WorkBuddy 开放平台 | 2026-10-27 | 技能 `os_3782f91f36d4b688` | ✅ 已提交审核（免费版）。开收款前置：≥1 个技能过审 |
+| WorkBuddy 连接器 | 2026-10-27 | `oc_5d13e5d566d17e7a` | ✅ 已提交审核（MCP，不参与收费） |
 | 扣子 Coze | — | — | ⏸ 等商户入驻 |
