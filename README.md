@@ -42,10 +42,9 @@ prompts, concept art, game art direction, illustration, and brand visuals.
 The order matters: **local first, then `--fuzzy` (still free), only then paid.**
 The skill never presents a local result as a cloud one — `source` is always `local` or `cloud`.
 
-> **Pricing status (2026-10-28): the cloud path is free right now.** The upstream service is
-> running a free traffic-building period, so `--allow-cloud` no longer needs a quota. The paid
-> 402 / x402 flow is preserved upstream and can be switched back on without changing this skill;
-> `FS_QUOTA` may stay unset during that period.
+> **Pricing status (2026-10-28): everything is free — no key, no quota token.** The upstream is
+> free by default; paid 402 / x402 only turns on if the operator sets `FS_PAID=1`. Only rate limits
+> apply (20/min per IP, 200 cloud calls per visitor per day). `FS_QUOTA` may stay unset.
 
 ## Quick start
 
