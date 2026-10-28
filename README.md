@@ -80,7 +80,7 @@ Global flags work before or after the subcommand.
 
 | Variable | Required | Meaning |
 |---|---|---|
-| `FS_QUOTA` | No | Cloud quota token. **Empty = paid endpoints are never called** |
+| `FS_QUOTA` | No | Cloud quota token. **Free phase (2026-10-28 on): leave it empty — cloud calls still work.** Only needed if the operator turns billing on with `FS_PAID=1` |
 | `FS_API_BASE` | No | Service endpoint, defaults to `https://xiximm.cloud` |
 | `FS_CACHE_DIR` | No | Lexicon cache dir, defaults to `~/.cache/feeling-search` |
 | `FS_CACHE_TTL` | No | Cache lifetime in seconds, defaults to 604800 (7 days) |

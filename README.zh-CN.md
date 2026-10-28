@@ -77,7 +77,7 @@ python "$SKILL_DIR/scripts/fs_api.py" style-words cyberpunk
 
 | 变量 | 必填 | 说明 |
 |---|---|---|
-| `FS_QUOTA` | 否 | 云端额度 token。**留空 = 永不调用任何付费端点** |
+| `FS_QUOTA` | 否 | 云端额度 token。**免费期（2026-10-28 起）留空即可，云端照样能调**；只有运营端打开 `FS_PAID=1` 时才需要 |
 | `FS_API_BASE` | 否 | 服务端点，默认 `https://xiximm.cloud` |
 | `FS_CACHE_DIR` | 否 | 词表缓存目录，默认 `~/.cache/feeling-search` |
 | `FS_CACHE_TTL` | 否 | 缓存有效期秒数，默认 604800（7 天） |

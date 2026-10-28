@@ -25,6 +25,9 @@
 
 v1 已于 2026-10-27 整体移除（感受层撤除），`/v1/*` 现在走平台默认 404，没有后继版本链接。
 
+> 路径里的 `{词}` / `{id}` 是**占位符**，要换成真实值再发（`/v2/styles/minimalism`、`/v2/words/空灵`）。
+> 原样发送模板（浏览器会把它编码成 `%7Bid%7D`）会回 `404 not_found`，并在 `message` 里给出改写示例。
+
 限流：免费端点按 IP 滑动窗口，60 秒 20 次；超出回 429。
 
 ## POST /v2/analyze
@@ -159,7 +162,7 @@ v1 已于 2026-10-27 整体移除（感受层撤除），`/v1/*` 现在走平台
 | 404 | `word_not_found` / `style_not_found` / `not_found` / `unknown_order` / `unknown_token` | 查无此项 |
 | 400 | `missing_token` / `missing_out_trade_no` / `invalid_proof` | 额度/订单参数缺失 |
 | 409 | `amount_mismatch` / `resource_mismatch` / `order_check_failed` | 领取额度时的订单校验不通过 |
-| 405 | `method_not_allowed` | 方法不支持（常见于用 GET 去戳 POST-only 的 `/v2/analyze`） |
+| 405 | `method_not_allowed` | 方法不支持（常见于用 GET 去戳 POST-only 的 `/v2/analyze`；**路径形状不对不再是 405**，模板占位符走 404） |
 | 413 | `payload_too_large` / `too_many_ids` | 体积超限 |
 | 429 | — | 触发限流 |
 | 500 | `internal_error` | 服务端异常 |
