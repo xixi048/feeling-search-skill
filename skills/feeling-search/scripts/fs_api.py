@@ -108,6 +108,11 @@ def saved_quota():
         return ""
 
 
+def quota_url(token):
+    """额度端点 URL。统一用 urlencode，别手拼 `?token=`+- 拼接（转义漏一处就会带上原始 token）。"""
+    return env_base() + "/v2/quota?" + urllib.parse.urlencode({"token": token})
+
+
 def save_quota(token, meta=None):
     os.makedirs(cache_dir(), exist_ok=True)
     tmp = quota_path() + ".tmp"
@@ -402,8 +407,7 @@ def cmd_quota(args):
 
     if args.set_token:
         token = args.set_token.strip()
-        resp = http_get(env_base() + "/v2/quota?token=" + urllib.parse.quote(token),
-                        offline=args.offline)
+        resp = http_get(quota_url(token), offline=args.offline)
         path = save_quota(token)
         return {"ok": True, "action": "set", "quota": resp.get("quota"), "saved_to": path}
 
@@ -413,8 +417,7 @@ def cmd_quota(args):
             "还没有额度 token：用 `quota --set <token>` 存一个，"
             "或 `quota --claim --proof <payment_proof> --trade <trade_no>` 领取；"
             "领取页 " + env_base() + "/docs/quota.html", "no_token")
-    resp = http_get(env_base() + "/v2/quota?token=" + urllib.parse.quote(token),
-                    offline=args.offline)
+    resp = http_get(quota_url(token), offline=args.offline)
     return {
         "ok": True,
         "action": "balance",
