@@ -44,7 +44,9 @@ The skill never presents a local result as a cloud one — `source` is always `l
 
 > **Pricing status (2026-10-28): everything is free — no key, no quota token.** The upstream is
 > free by default; paid 402 / x402 only turns on if the operator sets `FS_PAID=1`. Only rate limits
-> apply (20/min per IP, 200 cloud calls per visitor per day). `FS_QUOTA` may stay unset.
+> and daily caps apply (20/min per IP; per visitor per day: analyze 200, images 60, styles 200 —
+> each with its own bucket). `FS_QUOTA` may stay unset. During the free phase you can still read an
+> old balance with `GET /v2/quota?token=…` (returns `free_mode: true`, never consumes).
 
 ## Quick start
 

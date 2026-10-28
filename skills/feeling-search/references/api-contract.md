@@ -5,8 +5,11 @@
 
 > **计费状态（2026-10-28）：全部免费，不需要额度 token。**
 > 下面表格里的「1 次额度」是**计费开启时**的口径，当前不生效。
-> 免费模式只有两道限：每 IP 20 次/分钟；`/v2/analyze` 每访客每天 200 次
-> （北京时间零点重置，超限 `429 free_daily_limit`，响应头 `X-FS-Free-Used` / `X-FS-Free-Limit`）。
+> 免费模式只有限速 + 每日额度：每 IP 20 次/分钟；每天三条额度**各算各的桶**（北京时间零点重置，
+> 超限 `429 free_daily_limit`，响应头 `X-FS-Free-Used` / `X-FS-Free-Limit`）：
+> `POST /v2/analyze` 200 次、`GET /v2/images` 60 次、`GET /v2/styles/:id` 200 次。
+> 免费期额度不再售卖，但 `GET /v2/quota?token=…` 仍可只读查历史余额（返回 `free_mode: true`，不扣次）；
+> 不带 token 仍是 `404 billing_disabled`。
 > 计费只在运营端显式设 `FS_PAID=1` 时恢复，调用方代码无需改动。
 > 公开流量数据：`GET /v2/stats`（聚合，不含个人数据）。
 
