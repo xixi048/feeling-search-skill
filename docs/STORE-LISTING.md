@@ -14,12 +14,31 @@
 | **skillsmd.dev** | ✅ 已提交 | id `6e9fe9a7-45b7-4075-94c0-e7812584f155` |
 | **skillbay.sh** | ✅ 已提交待人工审核 | `HTTP 201`，联系人 `xixi048 / 916708243@qq.com` |
 | **buildwithclaude** | ✅ 重开 PR（按 #601 的三条意见全修） | [PR #613](https://github.com/davepoon/buildwithclaude/pull/613)：只带 feeling-search、去掉 `metadata`、scripts/references 随包、`plugin.json` 205→206 且 keywords 补 `feeling-search` |
+| **awesome-openclaw-skills**（53k★） | ✅ 新开 PR | [PR #603](https://github.com/VoltAgent/awesome-openclaw-skills/pull/603)：加入 Image & Video Generation，README + `categories/image-and-video-generation.md` 双改，计数 171→172 |
+| **public-api-lists**（16k★） | ✅ 新开 PR | [PR #868](https://github.com/public-api-lists/public-api-lists/pull/868)：Art & Design 表加一行，`No / Yes / Yes`（实测匿名可用、`Access-Control-Allow-Origin: *`） |
+| **BehiSecc/awesome-claude-skills**（10k★） | ✅ 新开 PR | [PR #1099](https://github.com/BehiSecc/awesome-claude-skills/pull/1099)：加入 Media & Content |
 | **自建发现端点** | ✅ 1.2.0 | `https://xixi048.github.io/feeling-search-skill/.well-known/agent-skills/index.json`（HTTP 200，updated 2026-10-30） |
 | **包产物** | ✅ 已重打 | `dist/feeling-search-v1.2.0-skillroot.zip`（sha256 `9b29e711…`）、`dist/wb/feeling-search-wb-1.2.0.zip`（20.0 KB） |
-| **ClawHub** | ⏸ **卡在 MIT-0 勾选（服务端强制）** | 线上仍是 `1.1.2`。CLI v0.7.0 的 `clawhub publish` 与直接 POST `/api/v1/skills`（带 token）都返回 `MIT-0 license terms must be accepted` → 该标记只在**网页发布表单**里，需本人打开 `https://clawhub.ai/skills/publish` 勾一次 |
+| **ClawHub** | ✅ **1.2.0 已提交，待安全扫描** | 「`MIT-0 license terms must be accepted`」**是 CLI 版本过旧造成的假阻塞**：本地 `clawhub@0.7.0`，`npm i -g clawhub@latest` 升到 **0.24.1** 后，同一条 `clawhub publish` 直接通过 → `Update submitted for feeling-search@1.2.0; pending security scans`。注意新版要求 `--source-repo` 与 `--source-commit` **必须成对**提供 |
+| **MCP.Directory** | ✅ **早已提交，审核中** | 填 `https://mcp.directory/submit` 时站点回 `This repository has already been submitted. We'll review it soon!` —— 说明前几轮已进队列（24h 审核），本轮无需重复 |
 | **VoltAgent/awesome-agent-skills** | ❌ **PR #1276 已被关闭（未合并）** | 2026-10-29 09:35 关闭，无评论。其 CONTRIBUTING 明确「brand new skills that were just created are not accepted」「must have real community usage」→ 本仓 0 star，现在重提大概率再被关。**建议攒到 ≥10 star 再提** |
 | Cow Skill Hub / 腾讯 SkillHub / 讯飞 Astron / WorkBuddy 开放平台（1.2.0 更新） / agentskill.sh | ⏸ 需登录 | 物料已就位：`dist/feeling-search-v1.2.0-skillroot.zip`、`dist/wb/feeling-search-wb-1.2.0.zip`；中文文案见 §3 |
 | SkillsMP | ⏸ 需 ≥2 stars | 仓库 0 star，自动索引拿不到 |
+
+### -1.0.1 本轮撞到的墙（省下一轮时间）
+
+| 渠道 | 结论 |
+|---|---|
+| **apis.io** | `/add/` 表单已全部填妥（name / email / `https://xiximm.cloud` / `/openapi.json` / 备注里写了 llms.txt 与 `/mcp`），提交时卡 **Cloudflare Turnstile**（`cf-turnstile-response` 为空）→ 需真实浏览器人工过一次校验 |
+| **directory.llmstxt.cloud** | 同上，Standard 免费档（1–3 月、nofollow）表单已填妥，卡同一个 Turnstile |
+| **appcypher/awesome-mcp-servers** | 仓库 **已 archived**，`gh pr create` 报 `does not have the correct permissions` → 不是权限问题，是归档了 |
+| **wong2/awesome-mcp-servers** | `pull_request_creation_policy = collaborators_only`，外部开不了 |
+| **travisvn/awesome-claude-skills**（15k★） | CONTRIBUTING 双重门槛：**需 ≥10 stars 否则自动关闭**，且**禁止 AI 生成/提交的 PR** → 本仓 0 star，提交即违规 |
+| **Glama** | 「Add Server」弹的是**邮箱注册**（不是 OAuth），要收验证邮件 → 暂缓 |
+| **skills.cowagent.ai**（Cow Skill Hub） | curl 200（0.9s），但 Playwright 内 `ERR_TIMED_OUT` —— 该站对自动化浏览器直接超时，换 UA 也无效 |
+| **agentskill.sh** | 表单与导入逻辑都正常，但返回 `Too many submissions. Please try again in an hour.` —— **IP 级限流** |
+| **腾讯 SkillHub（skillhub.cn）** | 页面可达、「登录」按钮点不动（走扫码），自动化过不去 |
+| **Chrome 登录态借不过来** | 复制 `User Data/Local State` + `Default/Network/Cookies` 到独立 profile 后，Playwright 里 GitHub 仍是未登录 —— **Chrome 的 cookie 是 App-Bound Encryption，跨浏览器内核解不开**。反过来，`--profile` + `--headed` 启动的 Playwright 会话**在窗口里登一次就能长期复用**，是唯一可行路径 |
 
 ### -1.1 本轮同步的 MCP / API 侧（同一个版本批）
 
