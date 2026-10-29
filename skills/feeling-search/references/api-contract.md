@@ -11,7 +11,9 @@
 > 免费期额度不再售卖，但 `GET /v2/quota?token=…` 仍可只读查历史余额（返回 `free_mode: true`，不扣次）；
 > 不带 token 仍是 `404 billing_disabled`。
 > 计费只在运营端显式设 `FS_PAID=1` 时恢复，调用方代码无需改动。
-> 公开流量数据：`GET /v2/stats`（聚合，不含个人数据）。
+> 公开流量数据：`GET /v2/stats`（聚合，不含个人数据）。字段分三类 PV：`human_pv`（浏览器）/
+> `agent_pv`（AI 智能体，含 MCP 客户端）/ `bot_pv`（爬虫）；来源有 `top_referrers`（含爬虫）与
+> `top_referrers_human`（只算人类）；`by_surface` 含 `page` / `api` / `mcp`。
 
 ## 端点总览
 
