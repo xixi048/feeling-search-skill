@@ -17,6 +17,8 @@
 | **awesome-openclaw-skills**（53k★） | ✅ 新开 PR | [PR #603](https://github.com/VoltAgent/awesome-openclaw-skills/pull/603)：加入 Image & Video Generation，README + `categories/image-and-video-generation.md` 双改，计数 171→172 |
 | **public-api-lists**（16k★） | ✅ 新开 PR | [PR #868](https://github.com/public-api-lists/public-api-lists/pull/868)：Art & Design 表加一行，`No / Yes / Yes`（实测匿名可用、`Access-Control-Allow-Origin: *`） |
 | **BehiSecc/awesome-claude-skills**（10k★） | ✅ 新开 PR | [PR #1099](https://github.com/BehiSecc/awesome-claude-skills/pull/1099)：加入 Media & Content |
+| **YuzeHao2023/Awesome-MCP-Servers**（1.1k★） | ✅ 新开 PR | [PR #772](https://github.com/YuzeHao2023/Awesome-MCP-Servers/pull/772)：Art & Literature |
+| **TensorBlock/awesome-mcp-servers**（1k★） | ✅ 新开 PR | [PR #4955](https://github.com/TensorBlock/awesome-mcp-servers/pull/4955)：`docs/art-culture--media.md`，按它的 Add-an-Entry 格式带 Tools / Install / Transport / MIT |
 | **自建发现端点** | ✅ 1.2.0 | `https://xixi048.github.io/feeling-search-skill/.well-known/agent-skills/index.json`（HTTP 200，updated 2026-10-30） |
 | **包产物** | ✅ 已重打 | `dist/feeling-search-v1.2.0-skillroot.zip`（sha256 `9b29e711…`）、`dist/wb/feeling-search-wb-1.2.0.zip`（20.0 KB） |
 | **ClawHub** | ✅ **1.2.0 已提交，待安全扫描** | 「`MIT-0 license terms must be accepted`」**是 CLI 版本过旧造成的假阻塞**：本地 `clawhub@0.7.0`，`npm i -g clawhub@latest` 升到 **0.24.1** 后，同一条 `clawhub publish` 直接通过 → `Update submitted for feeling-search@1.2.0; pending security scans`。注意新版要求 `--source-repo` 与 `--source-commit` **必须成对**提供 |
