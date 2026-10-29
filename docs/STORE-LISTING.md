@@ -1,11 +1,41 @@
 # 商店上架物料包 · feeling-search
 
 > 用途：把 `feeling-search` 推到国内外技能商店时，手填字段都已写好，直接复制即可。
-> 更新日期：2026-10-29 · 对应版本：**v1.1.2**（云端 analyze 默认免费 + 限量；本地词典档不变）
+> 更新日期：2026-10-30 · 对应版本：**v1.2.0**（整句零命中给新答案；本地 MCP 包带语义引擎）
 
 ---
 
-## 0. 本轮推送（v1.1.2 · 2026-10-29，有回执才算数）
+## -1. 本轮推送（v1.2.0 · 2026-10-30，有回执才算数）
+
+| 渠道 | 结果 | 回执 |
+|---|---|---|
+| GitHub 仓库 | ✅ 已推送 | `main = 0a9953d`（`xixi048/feeling-search-skill`），含 marketplace / 发现端点版本同步 |
+| **skillstore.io** | ✅ 已提交 | submission `49d31a68-d922-4505-8278-33cdf3b7e962`（pending，ETA 5–10 分钟） |
+| **skillsmd.dev** | ✅ 已提交 | id `6e9fe9a7-45b7-4075-94c0-e7812584f155` |
+| **skillbay.sh** | ✅ 已提交待人工审核 | `HTTP 201`，联系人 `xixi048 / 916708243@qq.com` |
+| **buildwithclaude** | ✅ 重开 PR（按 #601 的三条意见全修） | [PR #613](https://github.com/davepoon/buildwithclaude/pull/613)：只带 feeling-search、去掉 `metadata`、scripts/references 随包、`plugin.json` 205→206 且 keywords 补 `feeling-search` |
+| **自建发现端点** | ✅ 1.2.0 | `https://xixi048.github.io/feeling-search-skill/.well-known/agent-skills/index.json`（HTTP 200，updated 2026-10-30） |
+| **包产物** | ✅ 已重打 | `dist/feeling-search-v1.2.0-skillroot.zip`（sha256 `9b29e711…`）、`dist/wb/feeling-search-wb-1.2.0.zip`（20.0 KB） |
+| **ClawHub** | ⏸ **卡在 MIT-0 勾选（服务端强制）** | 线上仍是 `1.1.2`。CLI v0.7.0 的 `clawhub publish` 与直接 POST `/api/v1/skills`（带 token）都返回 `MIT-0 license terms must be accepted` → 该标记只在**网页发布表单**里，需本人打开 `https://clawhub.ai/skills/publish` 勾一次 |
+| **VoltAgent/awesome-agent-skills** | ❌ **PR #1276 已被关闭（未合并）** | 2026-10-29 09:35 关闭，无评论。其 CONTRIBUTING 明确「brand new skills that were just created are not accepted」「must have real community usage」→ 本仓 0 star，现在重提大概率再被关。**建议攒到 ≥10 star 再提** |
+| Cow Skill Hub / 腾讯 SkillHub / 讯飞 Astron / WorkBuddy 开放平台（1.2.0 更新） / agentskill.sh | ⏸ 需登录 | 物料已就位：`dist/feeling-search-v1.2.0-skillroot.zip`、`dist/wb/feeling-search-wb-1.2.0.zip`；中文文案见 §3 |
+| SkillsMP | ⏸ 需 ≥2 stars | 仓库 0 star，自动索引拿不到 |
+
+### -1.1 本轮同步的 MCP / API 侧（同一个版本批）
+
+| 渠道 | 结果 | 回执 |
+|---|---|---|
+| **GitHub（MCP 仓）** | ✅ 补推 7 个提交 | `6055456..ba109b7`（0.2.2 → 0.2.6 全在本地没推），另 `7a6aedf` 把连接器物料版本对齐 1.2.0 |
+| **npm `feeling-search-mcp`** | ✅ 已是最新 | `0.2.6`（`dist-tags.latest`），包内含 762 词向量 `idx/terms*.bin` |
+| **MCP 官方 Registry** | ✅ 已是最新 | `cloud.xiximm/feeling-search@0.2.6` `isLatest=true` |
+| **远端 /mcp 探活** | ✅ 200 | `initialize` 返回 `serverInfo.name=feeling-search / version=0.3.0` |
+| **Agent402** | ✅ 重新登记 | `listed:true` · `toolCount:13` · `routable:true` · `health:1` |
+| **public-apis** | 🟡 PR 仍 OPEN | [#8482](https://github.com/public-apis/public-apis/pull/8482)（Art & Design 分类） |
+| 扣子插件（新版本 + 重上架） / RapidAPI / Postman / x402scan / CDP Bazaar / APIs.guru | ⏸ 需登录或钱包签名 | 见 §0.3 与 2026-10-28 日志 |
+
+---
+
+## 0. 上一轮推送（v1.1.2 · 2026-10-29，有回执才算数）
 
 | 渠道 | 结果 | 回执 |
 |---|---|---|
@@ -15,7 +45,7 @@
 | **skillbay.sh** | ✅ 已提交待人工审核 | `HTTP 201`，联系人 `xixi048 / 916708243@qq.com`；审核后会邮件索要 before/after 证据 |
 | **ClawHub** | ✅ v1.1.2 已发布 | `clawhub skill verify feeling-search` → `version 1.1.2`，pending security scans（MIT-0 勾选已不再是阻塞） |
 | **buildwithclaude** | ✅ 重新开 PR（关闭时提的三条意见全修） | [PR #601](https://github.com/davepoon/buildwithclaude/pull/601)：去掉 `metadata`、`category: design`、scripts/references 随包提交 |
-| **VoltAgent/awesome-agent-skills** | 🟡 PR #1276 仍 OPEN | 列表指向仓库，仓库更新即生效，无需重开 |
+| **VoltAgent/awesome-agent-skills** | ❌ PR #1276 已于 2026-10-29 09:35 **被关闭（未合并）** | 见 §-1；门槛是「需有真实社区用量」，0 star 时重提无意义 |
 | **自建发现端点** | ✅ 1.1.2 | `https://xixi048.github.io/feeling-search-skill/.well-known/agent-skills/index.json`（HTTP 200，Pages 已按 e03f0c3 重建） |
 | **skills.sh** | ⏳ 尚未被索引 | 已 `npx skills add xixi048/feeling-search-skill` 播种安装量；搜索仍 0 命中，等爬虫 |
 | **支付宝 SkillPay（付费）** | ✅ **已过审 · 销售中** | 三个商品全部上架：`P0806000210888223`「感觉检索 · 美术风格 AI 提示词大全」**订阅 ¥9.9/月**（试用 5 次）· `P0806000210888227`「全 CG 存档 · 单机游戏画廊全解锁」**订阅 ¥2.99/月** · `P0806000210883975`「一键上架所有 Skill 商店」**订阅 ¥4.99/月**；三项协议（SkillPay 产品协议 / AI 按量付费 / 即刻收）均已签署 |
