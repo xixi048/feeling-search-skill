@@ -7,7 +7,7 @@
   },
   "metadata": {
     "description": "Commercial-grade art reference chart, art-style encyclopedia and art-style AI prompt encyclopedia — maps one colloquial sentence to the visual style that fits best, backed by an art reference chart (each style with name, definition, matched words and reference images). Free in the current build — the cloud fallback is free while FS_PAID is unset (rate-limited), and runs fully offline from a local cached lexicon.",
-    "version": "1.1.2",
+    "version": "1.2.0",
     "homepage": "https://github.com/xixi048/feeling-search-skill",
     "repository": "https://github.com/xixi048/feeling-search-skill",
     "license": "MIT",
@@ -32,7 +32,7 @@
     {
       "name": "feeling-search",
       "description": "商业级美术对照表 / 美术风格大全 / 美术风格 AI 提示词大全：把一句口语化的感觉描述检索成最匹配的视觉风格，并给出触发它的感受词（每种风格带名称、定义、命中词与参考图），可直接用于商业美术定调与出图。Commercial-grade art reference chart and art-style prompt encyclopedia; runs free and offline-first on a local cached lexicon; the cloud fallback is currently free and rate-limited.",
-      "version": "1.1.2",
+      "version": "1.2.0",
       "author": {
         "name": "xixi048",
         "url": "https://github.com/xixi048"

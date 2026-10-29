@@ -18,6 +18,8 @@
 | **VoltAgent/awesome-agent-skills** | 🟡 PR #1276 仍 OPEN | 列表指向仓库，仓库更新即生效，无需重开 |
 | **自建发现端点** | ✅ 1.1.2 | `https://xixi048.github.io/feeling-search-skill/.well-known/agent-skills/index.json`（HTTP 200，Pages 已按 e03f0c3 重建） |
 | **skills.sh** | ⏳ 尚未被索引 | 已 `npx skills add xixi048/feeling-search-skill` 播种安装量；搜索仍 0 命中，等爬虫 |
+| **支付宝 SkillPay（付费）** | ✅ **已过审 · 销售中** | 三个商品全部上架：`P0806000210888223`「感觉检索 · 美术风格 AI 提示词大全」**订阅 ¥9.9/月**（试用 5 次）· `P0806000210888227`「全 CG 存档 · 单机游戏画廊全解锁」**订阅 ¥2.99/月** · `P0806000210883975`「一键上架所有 Skill 商店」**订阅 ¥4.99/月**；三项协议（SkillPay 产品协议 / AI 按量付费 / 即刻收）均已签署 |
+| **腾讯 SkillHub（Pay Skill / 付费）** | 🟡 已提交，安全审核中 | slug `feeling-search`，显示名「感觉检索 · 美术风格对照表」，V 1.1.2，**单次调用价 0.10 元**（与支付宝服务登记价一致）；包 = `dist/feeling-search-v1.1.2-skillroot.zip`（45.7KB / 3 文件）。⚠️ 标价只是标价，实际扣款由技能打 402 完成，而线上 `FS_PAID` 未开 → 目前在售不扣款 |
 | **Cindy SkillHub** | 🟡 已上传并通过审核（v1.0.4），**可见性 private** | 见 §0.2，需要人工在 Cindy 技能页改动 |
 | 腾讯 SkillHub / 讯飞 Astron / Cow Skill Hub / WorkBuddy 开放平台（1.1.2 更新） / agentskill.sh | ⏸ 需登录 | 见 §0.3 |
 | SkillsMP | ⏸ 需 ≥2 stars | 仓库 0 star，自动索引拿不到 |

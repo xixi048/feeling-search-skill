@@ -5,12 +5,12 @@
     "name": "xixi048",
     "url": "https://github.com/xixi048"
   },
-  "updated": "2026-10-29",
+  "updated": "2026-10-30",
   "skills": [
     {
       "name": "feeling-search",
       "description": "商业级美术对照表 · 美术风格大全 · 美术风格 AI 提示词大全 — one colloquial sentence in, the best-matching visual style out (each with name, definition, matched words and reference images). Runs offline-first on a local cached lexicon; the cloud fallback is currently free and rate-limited.",
-      "version": "1.1.2",
+      "version": "1.2.0",
       "source": "https://github.com/xixi048/feeling-search-skill",
       "path": "skills/feeling-search/SKILL.md",
       "install": {
