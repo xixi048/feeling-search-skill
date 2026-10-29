@@ -24,6 +24,7 @@
 | **ClawHub** | ✅ **1.2.0 已提交，待安全扫描** | 「`MIT-0 license terms must be accepted`」**是 CLI 版本过旧造成的假阻塞**：本地 `clawhub@0.7.0`，`npm i -g clawhub@latest` 升到 **0.24.1** 后，同一条 `clawhub publish` 直接通过 → `Update submitted for feeling-search@1.2.0; pending security scans`。注意新版要求 `--source-repo` 与 `--source-commit` **必须成对**提供 |
 | **MCP.Directory** | ✅ **早已提交，审核中** | 填 `https://mcp.directory/submit` 时站点回 `This repository has already been submitted. We'll review it soon!` —— 说明前几轮已进队列（24h 审核），本轮无需重复 |
 | **VoltAgent/awesome-agent-skills** | ❌ **PR #1276 已被关闭（未合并）** | 2026-10-29 09:35 关闭，无评论。其 CONTRIBUTING 明确「brand new skills that were just created are not accepted」「must have real community usage」→ 本仓 0 star，现在重提大概率再被关。**建议攒到 ≥10 star 再提** |
+| **腾讯 游点灵 Skill Center**（craft.qq.com/skill-center） | ✅ **已提交，审核中** | 技能 id **123**「感觉检索风格库」，`audit_status: pending_review`，v1；类型 `art_effect`（美术效果）/ 引擎 `1`（Hyper）。作者显示腾讯账号昵称「云雀」。⚠️ 平台**禁 `.py`**：原包被后端拒（`包含禁止文件类型 scripts/fs_api.py`，前端零提示），改用纯 md 版 **`dist/feeling-search-v1.2.0-craftqq.zip`**（8.3KB / 2 文件：`SKILL.md` + `references/api-contract.md`，全 curl 调用）提交通过 |
 | Cow Skill Hub / 腾讯 SkillHub / 讯飞 Astron / WorkBuddy 开放平台（1.2.0 更新） / agentskill.sh | ⏸ 需登录 | 物料已就位：`dist/feeling-search-v1.2.0-skillroot.zip`、`dist/wb/feeling-search-wb-1.2.0.zip`；中文文案见 §3 |
 | SkillsMP | ⏸ 需 ≥2 stars | 仓库 0 star，自动索引拿不到 |
 
@@ -40,6 +41,7 @@
 | **skills.cowagent.ai**（Cow Skill Hub） | curl 200（0.9s），但 Playwright 内 `ERR_TIMED_OUT` —— 该站对自动化浏览器直接超时，换 UA 也无效 |
 | **agentskill.sh** | 表单与导入逻辑都正常，但返回 `Too many submissions. Please try again in an hour.` —— **IP 级限流** |
 | **腾讯 SkillHub（skillhub.cn）** | 页面可达、「登录」按钮点不动（走扫码），自动化过不去 |
+| **腾讯 游点灵：禁 `.py`** | 提交被后端静默拒绝：`{"code":10001,"message":"包含禁止文件类型 scripts/fs_api.py"}`。**前端完全无提示** —— 弹窗不关、无 toast、按钮回弹成可点，看起来像"点击没生效"。挂 `fetch`/`XHR` 钩子才看到。改成纯 `.md`（curl 调 REST）后一次过。判据：前端 `accept=".zip,.md"`，后端对 zip 内容做黑名单 |
 | **Chrome 登录态借不过来** | 复制 `User Data/Local State` + `Default/Network/Cookies` 到独立 profile 后，Playwright 里 GitHub 仍是未登录 —— **Chrome 的 cookie 是 App-Bound Encryption，跨浏览器内核解不开**。反过来，`--profile` + `--headed` 启动的 Playwright 会话**在窗口里登一次就能长期复用**，是唯一可行路径 |
 
 ### -1.1 本轮同步的 MCP / API 侧（同一个版本批）
